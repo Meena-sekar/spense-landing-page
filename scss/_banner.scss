@@ -1,0 +1,49 @@
+@import 'variables';
+
+.banner__section {
+    background-color: $grey;
+    &--wrapper {
+        margin: 0 1.25em;
+        @media (min-width: $desktop) {
+            margin: 0 auto;
+        }
+        @media (min-width: $desktop) {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+    .profit__list {
+        list-style-position: inside;
+    }
+    &--content {
+        padding: 1.25em 0;
+        .profit__list {
+            li {
+                color: $dark-grey;
+                font-weight: bold;
+                list-style-type: none;
+                display: flex;
+                column-gap: 0.75em;
+                align-items: center;
+                margin: 0.9em 0;
+            }
+        }
+    }
+    .input__wrapper {
+        input[type="button"] {
+            background-color: $black;
+            color: $white;
+            padding: 0.75rem;
+            border-radius: 5px;
+            border: 0;
+            margin: 0 0.5rem;
+        }
+        input[type="email"] {
+            border: 1px solid $dark-grey;
+            border-radius: 5px;
+            min-height: 40px;
+            color: $grey;
+            min-width: 60%;
+        }
+    }
+}

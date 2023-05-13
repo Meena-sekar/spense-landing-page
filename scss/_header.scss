@@ -1,0 +1,95 @@
+@import 'variables';
+
+header {
+    .announcment__bar {
+        background-color: $black;
+        color: $white;
+        padding: 2.5em 1.25em;
+        line-height: 1.5;
+        text-align: center;
+        span {
+            content: '\a';
+            display: inline-block;
+        }
+    }
+    .brand__logo {
+        font-size: 1.25rem;
+        font-weight: bolder;
+    }
+    .navbar__wrapper{
+        background-color: $grey;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: $grey; 
+        align-items: center;
+        font-weight: bolder;
+        .menu__block--wrapper {
+            display: flex;
+            align-items: center;
+        }
+        @media (min-width: $tablet) {
+            .humberger__icon {
+                display: none;
+            }   
+        }
+    
+        a {
+            color: $black;
+            text-decoration: none;
+            margin: 0 0.25em;
+            padding: 0 .5em;
+        }
+        .menu__block--wrapper {
+            display: none;
+            @media (min-width: $tablet) {
+                display: flex;
+            }
+        }
+   
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    header {
+        nav {
+            &.is-active {
+                .humberger__icon {
+                    position: absolute;
+                    right: 15px;
+                    z-index: 1;
+                    svg path {
+                        fill: $white;
+                    }
+                }
+                .menu__block--wrapper {
+                    font-size: 2.5rem;
+                    background: rgba(38,44,58,0.9);
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    overflow: auto;
+                    transition: display 5s ease-in-out 2s;
+                    .menu__block, .signing__block {
+                        display: flex;
+                        flex-direction: column;
+                        a {
+                            color: $white;
+                            margin: 0.25em 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
